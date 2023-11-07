@@ -15,6 +15,10 @@ let theCards = document.getElementById("cards-element")
 
 function startGame() {
     isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
     playGame()
 }
 function playGame() {
@@ -41,11 +45,13 @@ function playGame() {
     gameMessage.textContent = responseMessage
 }
 function newCard() {
-    let card = getRandomCard()
-    sum += card
-    cards.push(card)
-    console.log(cards)
-    playGame()
+    if (isAlive === true && hasBlackjack === false) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        console.log(cards)
+        playGame()
+    }
 }
 
 function getRandomCard() {
