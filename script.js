@@ -1,28 +1,34 @@
 //Properties
-let firstCard = 10
-let secondCard = 4
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+let sum = 0
 let hasBlackjack = false
 let isAlive = true
 let responseMessage = ""
 let gameMessage = document.getElementById("message-element")
 console.log(gameMessage)
-
-// I'll store th total-element <p> in a new variable called theTotal
 let theTotal = document.getElementById("total-element")
-let theCards = document.getElementById("card-element")
+let theCards = document.getElementById("cards-element")
 
-function startGame(){
+
+
+function startGame() {
+    isAlive = true
     playGame()
 }
-
 function playGame() {
-    theCards.textContent = "Cards: " + cards[0] + " " + [1]
-    // Display the total on the page
-    theTotal.textContent = "Sum: " + sum
-}
+    //Show the cards on the page
+    theCards.textContent = "Cards: " + cards[0] + " " + cards[1]
+    theCards.textContent = "Cards: "
 
+    // Make a for-loop to display all the cards
+    for (let i = 0; i < cards.length; i++) {
+        theCards.textContent += cards[i] + " "
+    }
+
+    //Display theTotal on the page
+    theTotal.textContent = "Sum: " + sum
     if (sum < 21) {
         responseMessage = "Do you want another card?"
     } else if (sum === 21) {
@@ -32,17 +38,23 @@ function playGame() {
         responseMessage = "You lose. Sorry, chump."
         isAlive = false
     }
-
     gameMessage.textContent = responseMessage
-
+}
 function newCard() {
-    let card = 2
+    let card = getRandomCard()
     sum += card
     cards.push(card)
     console.log(cards)
- playGame()
-    }
+    playGame()
+}
 
-    //Where should we start counting?
-// Where is the finish line?
-//What is the step size we should use?
+function getRandomCard() {
+    let randomNumber = Math.floor(Math.random() * 13) + 1
+    if (randomNumber > 10) {
+        return 10
+    } else if (randomNumber === 1) {
+        return 11
+    } else {
+        return randomNumber
+    }
+}
