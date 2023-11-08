@@ -11,6 +11,15 @@ console.log(gameMessage)
 let theTotal = document.getElementById("total-element")
 let theCards = document.getElementById("cards-element")
 
+//let playerName = "George Washington"
+//let playerChips = 200
+let playerElement = document.getElementById("player-element")
+playerElement.textContent = player.name + ": $" + player.chips
+
+let player = {
+    name: "George Washington",
+    chips: 200
+}
 
 
 function startGame() {
