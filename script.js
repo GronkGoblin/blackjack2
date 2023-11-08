@@ -18,9 +18,11 @@ playerElement.textContent = player.name + ": $" + player.chips
 
 let player = {
     name: "George Washington",
-    chips: 200
+    chips: 200,
+    sayHello: function () {
+        console.log("Hello There")
+    }
 }
-
 
 function startGame() {
     isAlive = true

@@ -26,13 +26,20 @@
 //    reachUntimelyEnd()
 //}
 
-let likeAnimatedMovies = true
-let likeRobots = false
+//let likeAnimatedMovies = true
+//let likeRobots = false
 
-if (likeAnimatedMovies === true || likeRobots === true) {
-    recommendMovie()
-}
+//if (likeAnimatedMovies === true || likeRobots === true) {
+ //   recommendMovie()
+//}
 
-function recommendMovie(){
-    console.log("You might like Wall-E")
+//function recommendMovie(){
+ //   console.log("You might like Wall-E")
+//}
+
+let spaceship = {
+    name: "USS Defiant",
+    class: "Defiant",
+    registry: "NX-74205",
+    captain: "Benjamin Sisko",
 }
